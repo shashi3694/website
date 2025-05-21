@@ -18,8 +18,8 @@ ARG HUGO_VERSION
 
 RUN mkdir $HOME/src && \
     cd $HOME/src && \
-    curl -L https://github.com/gohugoio/hugo/archive/refs/tags/v0.125.0.tar.gz | tar -xz && \
-    https://github.com/gohugoio/hugo/archive/refs/tags/v0.125.0.tar.gz
+    curl -L https://github.com/gohugoio/hugo/archive/refs/tags/v${HUGO_VERSION}.tar.gz | tar -xz && \
+    cd "hugo-${HUGO_VERSION}" && \
 
     cd "hugo-v0.125.0.tar.gz" && \
     go install --tags extended
