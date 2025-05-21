@@ -18,8 +18,10 @@ ARG HUGO_VERSION
 
 RUN mkdir $HOME/src && \
     cd $HOME/src && \
-    curl -L https://github.com/gohugoio/hugo/archive/refs/tags/v${0.125.0}.tar.gz | tar -xz && \
-    cd "hugo-${0.125.0}" && \
+    curl -L https://github.com/gohugoio/hugo/archive/refs/tags/v0.125.0.tar.gz | tar -xz && \
+    https://github.com/gohugoio/hugo/archive/refs/tags/v0.125.0.tar.gz
+
+    cd "hugo-v0.125.0.tar.gz" && \
     go install --tags extended
 
 FROM docker.io/library/golang:1.23.1-alpine3.20
